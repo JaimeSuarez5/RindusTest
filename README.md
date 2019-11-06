@@ -10,7 +10,7 @@
 - Caching logic
 - Some of the libraries used: Koin, Retrofit2, MockK, Glide...
 
-<img src="https://github.com/JaimeSuarez5/RindusTest/blob/develop/fetch_user/images/rindus_test_video.gif" width="280" />
+<img src="images/rindus_test_video.gif" width="280" />
 
 ## Functionality
 - Display users and its albums, todo's and posts
