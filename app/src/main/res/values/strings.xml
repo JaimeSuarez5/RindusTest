@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Rindus Test</string>
+
+    <string name="users">Users</string>
+    <string name="user_details">User details</string>
+    <string name="post_details">Post details</string>
+    <string name="albums">Albums</string>
+    <string name="posts">Posts</string>
+    <string name="todos">Todo\'s</string>
+    <string name="comments">Comments</string>
+
+    <string name="see_more">See more</string>
+    <string name="feature_not_implemented">Feature to be implemented</string>
+
+
+    <!-- Create to-do -->
+    <string name="create_todo_title">Create a Todo</string>
+    <string name="create_todo_hint">Type your todo here…</string>
+    <string name="create_todo_button">Create</string>
+    <string name="new_todo_created">Todo created successfully</string>
+    <string name="todo_deleted">Todo deleted successfully</string>
+
+    <!-- Errors -->
+    <string name="api_error">The server is not responding</string>
+    <string name="cache_error">We found an error accessing the storage</string>
+    <string name="unknown_error">Oops… We found an unexpected error</string>
+</resources>

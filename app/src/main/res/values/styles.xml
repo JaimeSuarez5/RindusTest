@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+    </style>
+
+    <style name="BigTitleText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#444444</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="MediumTitleText" parent="BigTitleText">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="SubtitleText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#B3444444</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CaptionText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#6F444444</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SmallCaptionText" parent="CaptionText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SectionTitleText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#B5000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PhotoTitle" parent="TextAppearance.AppCompat">
+        <item name="android:background">#8A636363</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

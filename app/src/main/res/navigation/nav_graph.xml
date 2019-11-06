@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/usersFragment">
+
+    <fragment
+            android:id="@+id/usersFragment"
+            android:name="es.jaimesuarez.rindustest.user.fragment.UsersFragment"
+            android:label="@string/users"
+            tools:layout="@layout/fragment_users" >
+        <action
+                android:id="@+id/action_usersFragment_to_userDetailFragment"
+                app:destination="@+id/userDetailFragment"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit"
+                app:popUpTo="@+id/usersFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/userDetailFragment"
+            android:name="es.jaimesuarez.rindustest.user.fragment.UserDetailFragment"
+            android:label="@string/user_details"
+            tools:layout="@layout/fragment_user_detail" >
+        <argument
+                android:name="userInfo"
+                app:argType="es.jaimesuarez.rindustest.user.model.UserDisplay" />
+        <action
+                android:id="@+id/action_userDetailFragment_to_itemListFragment"
+                app:destination="@id/itemListFragment"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+                android:id="@+id/action_userDetailFragment_to_postDetailFragment"
+                app:destination="@id/postDetailFragment"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+                android:id="@+id/action_userDetailFragment_to_albumDetailFragment"
+                app:destination="@id/albumDetailFragment"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+                android:id="@+id/action_userDetailFragment_to_todoListFragment"
+                app:destination="@id/todoListFragment"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+            android:id="@+id/itemListFragment"
+            android:name="es.jaimesuarez.rindustest.common.fragment.ItemListFragment"
+            tools:layout="@layout/fragment_item_list">
+        <argument
+                android:name="itemType"
+                app:argType="es.jaimesuarez.rindustest.common.fragment.ItemListFragment$ListType" />
+        <argument
+                android:name="userId"
+                app:argType="integer" />
+        <action
+                android:id="@+id/action_itemListFragment_to_postDetailFragment"
+                app:destination="@id/postDetailFragment"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+                android:id="@+id/action_itemListFragment_to_albumDetailFragment"
+                app:destination="@id/albumDetailFragment"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+            android:id="@+id/postDetailFragment"
+            android:name="es.jaimesuarez.rindustest.post.fragment.PostDetailFragment"
+            android:label="@string/post_details"
+            tools:layout="@layout/fragment_post_detail" >
+        <argument
+                android:name="post"
+                app:argType="es.jaimesuarez.rindustest.post.model.PostDisplay" />
+    </fragment>
+    <fragment
+            android:id="@+id/albumDetailFragment"
+            android:name="es.jaimesuarez.rindustest.album.fragment.AlbumDetailFragment"
+            android:label="{albumName}"
+            tools:layout="@layout/fragment_album_detail">
+        <argument
+                android:name="album"
+                app:argType="es.jaimesuarez.rindustest.album.model.AlbumDisplay" />
+        <argument
+                android:name="albumName"
+                app:argType="string" />
+    </fragment>
+    <dialog
+            android:id="@+id/createTodoDialog"
+            android:name="es.jaimesuarez.rindustest.todo.fragment.CreateTodoDialog"
+            tools:layout="@layout/dialog_create_todo"
+            android:label="CreateTodoDialog" >
+        <argument
+                android:name="userId"
+                app:argType="integer" />
+    </dialog>
+    <fragment
+            android:id="@+id/todoListFragment"
+            android:name="es.jaimesuarez.rindustest.todo.fragment.TodoListFragment"
+            tools:layout="@layout/fragment_item_list"
+            android:label="@string/todos" >
+        <action
+                android:id="@+id/action_todoListFragment_to_createTodoDialog"
+                app:destination="@id/createTodoDialog"
+                app:enterAnim="@anim/fragment_close_enter"
+                app:exitAnim="@anim/fragment_close_exit"
+                app:popEnterAnim="@anim/fragment_close_enter"
+                app:popExitAnim="@anim/fragment_close_exit" />
+        <argument
+                android:name="userId"
+                app:argType="integer" />
+    </fragment>
+</navigation>

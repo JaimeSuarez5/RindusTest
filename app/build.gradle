@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+def version = rootProject.ext.releaseInfo
+def appDependencies = rootProject.ext.appDependencies
+def testDependencies = rootProject.ext.testDependencies
+
+android {
+    compileSdkVersion version.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationIdentifier
+        minSdkVersion version.minSdkVersion
+        targetSdkVersion version.compileSdkVersion
+        versionCode version.versionCode
+        versionName version.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    androidExtensions {
+        experimental = true
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(":domain")
+    implementation project(":data")
+
+    implementation appDependencies.kotlin_jdk
+    implementation appDependencies.coroutines_core
+    implementation appDependencies.coroutines_android
+    implementation appDependencies.core_ktx
+
+    implementation appDependencies.appcompat
+    implementation appDependencies.constraint
+    implementation appDependencies.recycler
+    implementation appDependencies.cardview
+
+    implementation appDependencies.koin
+    implementation appDependencies.koin_viewmodel
+
+    implementation appDependencies.lifecycle
+    implementation appDependencies.viewmodel_ktx
+
+    implementation appDependencies.navigation_fragment
+    implementation appDependencies.navigation_ui
+
+    implementation appDependencies.legacy
+
+    implementation appDependencies.glide
+    annotationProcessor appDependencies.glide_processor
+
+    testImplementation testDependencies.arch_core_test
+    testImplementation testDependencies.coroutines_test
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.runner
+    androidTestImplementation testDependencies.espresso
+}
